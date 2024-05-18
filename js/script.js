@@ -23,7 +23,6 @@ let nameVal2 = '';
 
 // SET DATE INPUT MIN WITH TODAY'S DATE
 const today = new Date().toISOString().split('T')[0];
-console.log(today)
 dateEl.setAttribute('min', today);
 
 function populateNumbers() {
@@ -62,6 +61,7 @@ function populateNumbers() {
 function setCountdown() {
     // GET NUMBER VERSION OF CURRENT DATE
     countdownDate = dateEl.value;
+    countdownDate = countdownDate + " 09:57:00"
     // console.log(countdownDate)
     setLocalStorage();
     populateNumbers();
@@ -97,6 +97,8 @@ function setDateString() {
     const dateValue = newDate.getDate();
     const monthValue = newDate.getMonth();
     const yearValue = newDate.getFullYear();
+    const hours = newDate.getHours()
+    const minutes  = newDate.getMinutes()
 
     // 1st 2nd and 3rd OF MONTH
     const toString = dateValue.toString();
@@ -117,7 +119,7 @@ function setDateString() {
 
     // POPULATE DATE PARAGRAPH
     const dateString = document.querySelector('.date-text__inner');
-    dateString.textContent = `${weekdays[weekday]} ${dateValue}${suffix} ${months[monthValue]} ${yearValue}`;
+    dateString.textContent = `${weekdays[weekday]} ${dateValue}${suffix} ${months[monthValue]} ${yearValue} ${hours}:${minutes}`;
 }
 
 function completeUI() {
