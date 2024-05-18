@@ -241,6 +241,6 @@ function restorePreviousCountdown() {
 restorePreviousCountdown();
 
 // EVENT LISTENER
-countdownForm.addEventListener('submit', checkInput);
-resetEl.addEventListener('click', reset);
+// countdownForm.addEventListener('submit', checkInput);
+// resetEl.addEventListener('click', reset);
 
