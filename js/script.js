@@ -37,7 +37,7 @@ function populateNumbers() {
     const day = hour * 24;
     const week = day * 7;
     const weeks = Math.floor(distance / week);
-    const days = Math.floor((distance % week) / day);
+    const days = Math.floor((distance / day));
     const hours = Math.floor((distance % day) / hour)
     const minutes = Math.floor((distance % hour) / minute)
     const seconds = Math.floor((distance % minute) / second)
@@ -50,11 +50,12 @@ function populateNumbers() {
         countdownEl.style.display = 'none';
     } else {
         // POPULATE COUNTDOWN
-        timeElements[0].textContent = weeks;
-        timeElements[1].textContent = days;
-        timeElements[2].textContent = hours;
-        timeElements[3].textContent = minutes;
-        timeElements[4].textContent = seconds;
+        // timeElements[0].textContent = weeks;
+
+        timeElements[0].textContent = days;
+        timeElements[1].textContent = hours;
+        timeElements[2].textContent = minutes;
+        timeElements[3].textContent = seconds;
     }
 }
 
